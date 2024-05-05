@@ -1,5 +1,7 @@
+import { Input } from '@vkontakte/vkui';
+
 function App() {
-  return <h1>Hello world!</h1>
+  return <Input />;
 }
 
-export default App
+export default App;
