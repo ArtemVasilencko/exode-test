@@ -3,6 +3,12 @@ import { blueGrey } from '@mui/material/colors';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://countries.trevorblades.com/graphql',
+  cache: new InMemoryCache()
+});
 
 const theme = createTheme({
   palette: {
@@ -19,10 +25,12 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ThemeProvider>
+  <ApolloProvider client={client}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ThemeProvider>
+  </ApolloProvider>
 );
