@@ -1,7 +1,23 @@
-import { Input } from '@vkontakte/vkui';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { MyHeader } from './components/header/header';
+import { blueGrey } from '@mui/material/colors';
+import '../src/assets/css/reset.css';
 
-function App() {
-  return <Input />;
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: blueGrey[300],
+      main: blueGrey[500],
+      dark: blueGrey[700]
+    }
+  }
+});
+
+export default function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MyHeader />
+    </ThemeProvider>
+  );
 }
-
-export default App;
