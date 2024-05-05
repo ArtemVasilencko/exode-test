@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import { MyHeader } from './components/header/header';
 import { blueGrey } from '@mui/material/colors';
 import '../src/assets/css/reset.css';
+import { MyHeader } from './components/header/header';
 
 const theme = createTheme({
   palette: {
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <MyHeader />
     </ThemeProvider>
   );
