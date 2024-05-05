@@ -5,7 +5,7 @@ export function MyHeaderLogo() {
   return (
     <>
       <ExodeIcon />
-      <Typography variant='h5'>xode</Typography>
+      <Typography variant='h5'>{'xode'}</Typography>
     </>
   );
 }
