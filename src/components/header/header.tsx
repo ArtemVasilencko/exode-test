@@ -5,9 +5,9 @@ import { AppLayout } from '../app-layout/app-layout';
 
 export function MyHeader() {
   return (
-    <AppBar className='header'>
+    <AppBar position='static' className='header'>
       <AppLayout>
-        <Toolbar>
+        <Toolbar className='header__toolbar'>
           <MyHeaderLogo />
         </Toolbar>
       </AppLayout>
