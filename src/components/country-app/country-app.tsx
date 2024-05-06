@@ -5,6 +5,8 @@ import { CountryList } from '../country-list/country-list';
 import { ChangeEvent, useState } from 'react';
 import { GET_ALL_COUNTRIES, GET_COUNTRY_BY_CODE } from '../../query/countries';
 import { useLazyQuery, useQuery } from '@apollo/client';
+import toast from 'react-hot-toast';
+import { toastMessage } from '../../constants/constants';
 
 export function CountryApp() {
   const [
@@ -19,23 +21,24 @@ export function CountryApp() {
   };
 
   const handleButtonClick = () => {
-    if (!countryCode?.length) return alert('empty input'); // todo toast
+    if (!countryCode?.length) return toast.error(toastMessage.empty);
     getCountryByCode({
       variables: { countryCode: countryCode.toUpperCase() }
-    }).then(
-      (item) =>
-        item.data?.countries?.length ? alert('success') : alert('error') // todo toast
+    }).then((item) =>
+      item.data?.countries?.length
+        ? toast.success(toastMessage.success)
+        : toast.error(toastMessage.error)
     );
   };
 
   const handleClearClick = () => {
     if (!foundedCountryData?.countries?.length)
-      return alert('already refreshed'); // todo toast
+      return toast(toastMessage.already);
     setCountryCode(() => '');
     getCountryByCode({
       variables: { countryCode }
     });
-    alert('success refreshed'); // todo toast
+    toast.success(toastMessage.successUpdated);
   };
 
   if (loading || foundedCountryLoading)

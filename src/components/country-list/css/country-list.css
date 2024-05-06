@@ -1,5 +1,5 @@
 .country__list {
-  max-height: calc(100vh - 160px);
+  max-height: calc(100vh - 139px);
   overflow: auto;
 }
 
