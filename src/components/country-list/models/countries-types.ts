@@ -1,8 +1,16 @@
 export interface CountryI {
   name: string;
+  code: string;
   capital: string;
   emoji: string;
-  code: string;
   phone: string;
-  __typename: string;
+  continent: {
+    name: string;
+  };
+  currency: string;
+  languages: LanguageType[];
 }
+
+export type LanguageType = {
+  name: string;
+};

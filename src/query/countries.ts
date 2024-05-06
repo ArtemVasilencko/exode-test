@@ -5,7 +5,13 @@ export const GET_ALL_COUNTRIES = gql`
     countries {
       code
       name
-      emoji
+      currency
+      languages {
+        name
+      }
+      continent {
+        name
+      }
       capital
       phone
     }
