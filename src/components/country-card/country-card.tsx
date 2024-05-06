@@ -15,8 +15,11 @@ export function CountryCard(props: CountryI) {
             <Typography variant='h5'>{props.name}</Typography>
             <Typography variant='h6'>{props.continent.name}</Typography>
           </Box>
+          <Box display='flex' justifyContent='space-between'>
+            <p className='country__card__info__capital'>{props.capital}</p>
+            <Typography variant='h6'>{props.emoji}</Typography>
+          </Box>
 
-          <p className='country__card__info__capital'>{props.capital}</p>
           <Box className='country__card__languages__box'>
             {!!props.languages.length && <RecordVoiceOverIcon />}
             <CountryCardLanguagesList data={props.languages.slice(0, 2)} />

@@ -6,6 +6,7 @@ export const GET_ALL_COUNTRIES = gql`
       code
       name
       currency
+      emoji
       languages {
         name
       }
@@ -23,6 +24,7 @@ export const GET_COUNTRY_BY_CODE = gql`
     countries(filter: { code: { eq: $countryCode } }) {
       code
       name
+      emoji
       currency
       languages {
         name
