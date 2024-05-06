@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/exode-test/static/css/main.36dc9b24.css",
-    "main.js": "/exode-test/static/js/main.a7e12e15.js",
+    "main.css": "/exode-test/static/css/main.b2c0f7e0.css",
+    "main.js": "/exode-test/static/js/main.2077df95.js",
     "index.html": "/exode-test/index.html",
-    "main.36dc9b24.css.map": "/exode-test/static/css/main.36dc9b24.css.map",
-    "main.a7e12e15.js.map": "/exode-test/static/js/main.a7e12e15.js.map"
+    "main.b2c0f7e0.css.map": "/exode-test/static/css/main.b2c0f7e0.css.map",
+    "main.2077df95.js.map": "/exode-test/static/js/main.2077df95.js.map"
   },
   "entrypoints": [
-    "static/css/main.36dc9b24.css",
-    "static/js/main.a7e12e15.js"
+    "static/css/main.b2c0f7e0.css",
+    "static/js/main.2077df95.js"
   ]
 }
