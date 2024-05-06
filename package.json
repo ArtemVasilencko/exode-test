@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https://artemvasilencko.github.io/exode-test",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.10.2",
