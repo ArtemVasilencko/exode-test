@@ -1,6 +1,6 @@
 import { CountryAppTitle } from './country-app-title';
 import { AppLayout } from '../app-layout/app-layout';
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import { CountryList } from '../country-list/country-list';
 import { ChangeEvent, useState } from 'react';
 import { GET_ALL_COUNTRIES, GET_COUNTRY_BY_CODE } from '../../query/countries';
@@ -52,7 +52,9 @@ export function CountryApp() {
             handleClearClick={handleClearClick}
             countryCode={countryCode}
           />
-          <h1>Loading...</h1>
+          <Box justifyContent='center' display='flex'>
+            <CircularProgress />
+          </Box>
         </Box>
       </AppLayout>
     );
