@@ -1,4 +1,9 @@
+.country__app__title__box {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+}
+
 .country__app-title {
   color: #455a64;
-  font-weight: 700;
 }

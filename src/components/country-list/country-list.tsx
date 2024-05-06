@@ -6,13 +6,16 @@ import './css/country-list.css';
 import { CountryI } from './models/countries-types';
 
 export function CountryList() {
-  const { data, loading } = useQuery(GET_ALL_COUNTRIES);
+  const { data, loading, error } = useQuery(GET_ALL_COUNTRIES);
 
   useEffect(() => {
     console.log(data);
   }, [data]);
 
   if (loading) return <h1>Loading...</h1>;
+  if (error) {
+    return <h1>Error, reload the page</h1>;
+  }
 
   return (
     <ul className='country__list'>

@@ -17,3 +17,21 @@ export const GET_ALL_COUNTRIES = gql`
     }
   }
 `;
+
+export const GET_COUNTRY_BY_CODE = gql`
+  query country($countryCode: String!) {
+    countries(filter: { code: { eq: $countryCode } }) {
+      code
+      name
+      currency
+      languages {
+        name
+      }
+      continent {
+        name
+      }
+      capital
+      phone
+    }
+  }
+`;
