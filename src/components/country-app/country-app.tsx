@@ -7,7 +7,6 @@ import { GET_ALL_COUNTRIES, GET_COUNTRY_BY_CODE } from '../../query/countries';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import toast from 'react-hot-toast';
 import { toastMessage } from '../../constants/constants';
-import test from 'node:test';
 
 export function CountryApp() {
   const [
