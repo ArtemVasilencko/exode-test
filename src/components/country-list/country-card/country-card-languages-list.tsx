@@ -11,7 +11,7 @@ export function CountryCardLanguagesList({
     <ul className='country__card__languages__list'>
       {data.map((item, index) => (
         <li className='country__card__languages__list-item' key={index}>
-          {item.name}
+          {`${item.name}${index !== data.length - 1 ? ', ' : ''}`}
         </li>
       ))}
     </ul>

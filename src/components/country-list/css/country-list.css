@@ -1,5 +1,5 @@
 .country__list {
-  max-height: calc(100vh - 175px);
+  max-height: calc(100vh - 160px);
   overflow-y: scroll;
   overflow-x: hidden;
 }
