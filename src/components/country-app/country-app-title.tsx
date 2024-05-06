@@ -1,24 +1,32 @@
-import { useQuery } from '@apollo/client';
-import { Box, TextField, Typography } from '@mui/material';
-import { ChangeEvent, useEffect, useState } from 'react';
+import {
+  Box,
+  IconButton,
+  Divider,
+  InputBase,
+  Paper,
+  Typography
+} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SearchIcon from '@mui/icons-material/Search';
+import { ChangeEvent } from 'react';
 import { labels } from '../../constants/constants';
-import { GET_COUNTRY_BY_CODE } from '../../query/countries';
 import './css/country-app.css';
 
-export function CountryAppTitle() {
-  const [countryCode, setCountryCode] = useState('');
-  const { data } = useQuery(GET_COUNTRY_BY_CODE, {
-    variables: { countryCode }
-  });
+interface CountryAppTitlePropsI {
+  handleButtonClick: () => void;
+  loading: boolean;
+  countryCode: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleClearClick: () => void;
+}
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCountryCode(e.target.value);
-  };
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
+export function CountryAppTitle({
+  handleButtonClick,
+  loading,
+  countryCode,
+  handleChange,
+  handleClearClick
+}: CountryAppTitlePropsI) {
   return (
     <Box className='country__app__title__box'>
       <Typography
@@ -29,12 +37,28 @@ export function CountryAppTitle() {
       >
         Countries
       </Typography>
-      <TextField
-        value={countryCode}
-        onChange={handleChange}
-        label={labels.searchInput}
-        fullWidth
-      />
+      <Paper
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleButtonClick();
+        }}
+        component='form'
+        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 600 }}
+      >
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder={labels.searchInput}
+          value={countryCode}
+          onChange={handleChange}
+        />
+        <IconButton onClick={handleButtonClick} disabled={loading}>
+          <SearchIcon />
+        </IconButton>
+        <Divider sx={{ height: 28, m: 0.5 }} orientation='vertical' />
+        <IconButton onClick={handleClearClick}>
+          <DeleteIcon />
+        </IconButton>
+      </Paper>
     </Box>
   );
 }
