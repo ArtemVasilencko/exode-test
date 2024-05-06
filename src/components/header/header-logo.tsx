@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material';
-import { ExodeIcon } from './icons/exode-icon';
+import { ExodeIcon } from '../../assets/icons/exode-icon';
 
 export function MyHeaderLogo() {
   return (
-    <Box display='flex' alignItems='center' paddingLeft='12px'>
+    <Box display='flex' alignItems='center'>
       <ExodeIcon />
-      <Typography variant='h5'>{'xode'}</Typography>
+      <Typography variant='h5'>xode</Typography>
     </Box>
   );
 }

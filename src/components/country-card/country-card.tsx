@@ -1,10 +1,10 @@
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import { CountryI } from '../models/countries-types';
+import { CountryI } from '../../models/countries-types';
 import { CountryCardLanguagesList } from './country-card-languages-list';
-import '../css/country-card.css';
+import './css/country-card.css';
 
 export function CountryCard(props: CountryI) {
   return (
