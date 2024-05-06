@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { CountryCard } from './country-card/country-card';
+import { CountryI } from '../../models/countries-types';
+import { CountryCard } from '../country-card/country-card';
 import './css/country-list.css';
-import { CountryI } from './models/countries-types';
 
 interface CountryListPropsI {
   countriesData: CountryI[];

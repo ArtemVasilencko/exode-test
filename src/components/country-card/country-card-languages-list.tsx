@@ -1,4 +1,4 @@
-import { LanguageType } from '../models/countries-types';
+import { LanguageType } from '../../models/countries-types';
 
 interface CountryCardLanguagesListPropsI {
   data: LanguageType[];
