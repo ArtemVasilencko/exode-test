@@ -1,5 +1,6 @@
 .app__layout {
   margin: 0 auto;
-  padding: 0 24px;
-  width: 900px;
+  padding: 0 5px;
+  max-width: 900px;
+  width: 100%;
 }
