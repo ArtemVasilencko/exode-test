@@ -12,14 +12,15 @@ export function CountryCard(props: CountryI) {
       <CardContent>
         <Box className='country__card__info'>
           <Box display='flex' justifyContent='space-between'>
-            <Typography variant='h5'>{props.name}</Typography>
+            <Box display='flex' alignItems='center'>
+              <Typography variant='h5' marginRight='8px'>
+                {props.name}
+              </Typography>
+              <Typography variant='h6'>{props.emoji}</Typography>
+            </Box>
             <Typography variant='h6'>{props.continent.name}</Typography>
           </Box>
-          <Box display='flex' justifyContent='space-between'>
-            <p className='country__card__info__capital'>{props.capital}</p>
-            <Typography variant='h6'>{props.emoji}</Typography>
-          </Box>
-
+          <p className='country__card__info__capital'>{props.capital}</p>
           <Box className='country__card__languages__box'>
             {!!props.languages.length && <RecordVoiceOverIcon />}
             <CountryCardLanguagesList data={props.languages.slice(0, 2)} />
@@ -30,7 +31,7 @@ export function CountryCard(props: CountryI) {
             <PhoneAndroidIcon /> +{props.phone}
           </p>
           <p className='country__card__currency'>
-            <AttachMoneyIcon color='success' />
+            {props.currency && <AttachMoneyIcon color='success' />}
             {props.currency?.split(',').slice(0, 3).join(', ')}
           </p>
         </Box>
