@@ -1,7 +1,7 @@
 .country__app__title__box {
   display: flex;
   align-items: center;
-  padding: 18px;
+  padding: 10px 18px;
 }
 
 .country__app-title {

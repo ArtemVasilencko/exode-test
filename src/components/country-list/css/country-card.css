@@ -15,6 +15,11 @@
   margin-bottom: 10px;
 }
 
+.country__card__info__capital {
+  color: midnightblue;
+  font-weight: 600;
+}
+
 .country__card__languages__box {
   display: flex;
 }
