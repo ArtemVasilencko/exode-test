@@ -1,6 +1,6 @@
 import { CountryAppTitle } from './country-app-title';
 import { AppLayout } from '../app-layout/app-layout';
-import { Box, CircularProgress } from '@mui/material';
+import { Box } from '@mui/material';
 import { CountryList } from '../country-list/country-list';
 import { ChangeEvent, useState } from 'react';
 import { GET_ALL_COUNTRIES, GET_COUNTRY_BY_CODE } from '../../query/countries';
@@ -41,24 +41,6 @@ export function CountryApp() {
     toast.success(toastMessage.successUpdated);
   };
 
-  if (loading || foundedCountryLoading)
-    return (
-      <AppLayout>
-        <Box className='country__app__box'>
-          <CountryAppTitle
-            loading={loading}
-            handleChange={handleChange}
-            handleButtonClick={handleButtonClick}
-            handleClearClick={handleClearClick}
-            countryCode={countryCode}
-          />
-          <Box justifyContent='center' display='flex'>
-            <CircularProgress />
-          </Box>
-        </Box>
-      </AppLayout>
-    );
-
   return (
     <AppLayout>
       <Box className='country__app__box'>
@@ -72,9 +54,10 @@ export function CountryApp() {
         <CountryList
           countriesData={
             foundedCountryData?.countries.length
-              ? foundedCountryData.countries
-              : allCountriesData.countries
+              ? foundedCountryData?.countries
+              : allCountriesData?.countries
           }
+          loading={loading || foundedCountryLoading}
         />
       </Box>
     </AppLayout>
