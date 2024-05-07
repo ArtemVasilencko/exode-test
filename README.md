@@ -2,9 +2,9 @@
 
 `Exode-test` is a web application for display different countries and information about it.
 
-[👀[Deploy Link](https://artemvasilencko.github.io/exode-test/)]
+👀[Deploy Link](https://artemvasilencko.github.io/exode-test/)
 
-If you have questions, write to me in telegram, I will be happy to answer) [[telegram](https://t.me/freddypopa1/)]
+If you have questions, write to me in telegram, I will be happy to answer) [telegram](https://t.me/freddypopa1/)
 
 ## Project Purpose
 
