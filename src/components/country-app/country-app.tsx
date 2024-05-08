@@ -32,11 +32,12 @@ export function CountryApp() {
   };
 
   const handleClearClick = () => {
+    setCountryCode(() => '');
     if (!foundedCountryData?.countries?.length)
       return toast(toastMessage.already);
     setCountryCode(() => '');
     getCountryByCode({
-      variables: { countryCode }
+      variables: { countryCode: '' }
     });
     toast.success(toastMessage.successUpdated);
   };
